@@ -25,17 +25,37 @@
 	<!-- 宫格 -->
 		<uni-section :title="$t('grid.grid')" style="margin: 0;" type="line"></uni-section>
 		<view class="example-body">
-			<uni-grid :column="3" :highlight="true" @change="change">
-				<template v-for="(item,i) in gridList">
-					<uni-grid-item :index="i" :key="i"
-						v-if="i<3 || i>2&&i<6&&hasLogin || i>5&&uniIDHasRole('admin')"
-					>
-						<view class="grid-item-box" style="background-color: #fff;">
-							<image :src="'/static/grid/c'+(i+1)+'.png'" class="image" mode="aspectFill" />
-							<text class="text">{{item}}</text>
-						</view>
-					</uni-grid-item>
-				</template>
+			<uni-grid :column="3" :highlight="true">
+				<uni-grid-item>
+					<view class="grid-item-box" @click="handleToAccount">
+					  <uni-icons type="locked-filled" size="30"></uni-icons>
+					  <text class="text">账号管理</text>
+					</view>
+				</uni-grid-item>
+			
+				<uni-grid-item>
+				  <view class="grid-item-box"  @click="handleToAsset">
+				    <uni-icons type="medal" size="30"></uni-icons>
+				    <text class="text">资产管理</text>
+				  </view>
+				</uni-grid-item>
+				
+				<uni-grid-item>
+				  <view class="grid-item-box"  @click="changeGrid">
+				    <uni-icons type="medal" size="30"></uni-icons>
+				    <text class="text">收入</text>
+				  </view>
+				</uni-grid-item>
+				
+				<uni-grid-item>
+				  <view class="grid-item-box"  @change="changeGrid">
+				    <uni-icons type="medal" size="30"></uni-icons>
+				    <text class="text">支出</text>
+				  </view>
+				</uni-grid-item>
+				
+			
+				
 			</uni-grid>
 		</view>
 	</view>
@@ -76,6 +96,12 @@
 			this.gridList = gridList
 		},
 		methods: {
+			handleToAccount() {
+			  uni.navigateTo({url:'/pages/my-account-save/list'})
+			},
+			handleToAsset() {
+			  uni.navigateTo({url:'/pages/my-asset-manage/list'})
+			},
 			change(e) {
 				uni.showToast({
 					title:this.$t('grid.clickTip') + " " + `${e.detail.index}` + " " + this.$t('grid.clickTipGrid'),

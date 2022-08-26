@@ -170,7 +170,53 @@
 				"navigationBarTitleText": "意见反馈",
 				"enablePullDownRefresh": false
 			}
+		} ,{
+			"path": "pages/my-account-save/add",
+			"style": {
+				"navigationBarTitleText": "新增"
+			}
 		}
+		,{
+			"path": "pages/my-account-save/edit",
+			"style": {
+				"navigationBarTitleText": "编辑"
+			}
+		}
+		,{
+			"path": "pages/my-account-save/list",
+			"style": {
+				"navigationBarTitleText": "列表"
+			}
+		}
+		,{
+			"path": "pages/my-account-save/detail",
+			"style": {
+				"navigationBarTitleText": "详情"
+			}
+		}, {
+            "path": "pages/my-asset-manage/add",
+            "style": {
+                "navigationBarTitleText": "新增"
+            }
+        },
+        {
+            "path": "pages/my-asset-manage/edit",
+            "style": {
+                "navigationBarTitleText": "编辑"
+            }
+        },
+        {
+            "path": "pages/my-asset-manage/list",
+            "style": {
+                "navigationBarTitleText": "列表"
+            }
+        },
+        {
+            "path": "pages/my-asset-manage/detail",
+            "style": {
+                "navigationBarTitleText": "详情"
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

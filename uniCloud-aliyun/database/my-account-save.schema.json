@@ -1,0 +1,57 @@
+{
+	"bsonType": "object",
+	"required": ["user_id", "account"],
+	"permission": {
+		"read": "doc.user_id == auth.uid",
+		"create": "auth.uid!=null",
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户id，参考uni-id-users表",
+			"forceDefaultValue": {
+				"$env": "uid"
+			}
+		},
+		"system": {
+			"bsonType": "string",
+			"description": "来源系统",
+			"title": "来源系统"
+		},
+		"account": {
+			"bsonType": "string",
+			"description": "账号",
+			"title": "账号"
+		},
+		"password": {
+			"bsonType": "string",
+			"description": "密码",
+			"title": "图片列表"
+		},
+		"comment": {
+			"bsonType": "string",
+			"description": "备注",
+			"trim": "both",
+			"title": "备注"
+		},
+		"imgs": {
+			"bsonType": "array",
+			"arrayType": "file",
+			"maxLength": 6,
+			"fileMediaType": "image",
+			"title": "图片列表"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		}
+	}
+}

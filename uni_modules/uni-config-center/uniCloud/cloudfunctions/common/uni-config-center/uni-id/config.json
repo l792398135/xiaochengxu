@@ -1,6 +1,6 @@
 {
-  "passwordSecret": "passwordSecret-demo",
-  "tokenSecret": "tokenSecret-demo",
+  "passwordSecret": "asdfqweqkhwd^*&7daasd231dl",
+  "tokenSecret": "qdas98d&d9asd89as9**9d8s",
   "tokenExpiresIn": 7200,
   "tokenExpiresThreshold": 600,
   "passwordErrorLimit": 6,
